@@ -1,3 +1,77 @@
-body {
-    background-color: rgba(183, 10, 231, 0.575);
+@import "register.css";
+
+body
+{
+    font-family:"helvetica"; 
+    margin:0;
+    background:#475962;
+}
+ 
+
+.container
+{
+    text-align:center;
+    max-width:90%;
+    width:1100px;
+    margin: auto;
+}
+
+.mp-logo
+{
+    margin-bottom:20px;
+    max-width:90%;
+    width:35%;
+}
+
+.login
+{  
+    margin-top:20px;
+    padding-left:10%;
+    padding-right:10%;
+    text-align:center;
+    flex-direction: column;
+    display:flex;  
+}
+
+.login__input
+{
+    border-radius:15px;
+    padding:20px;
+    margin:15px;
+    border: 2px groove #475962;
+    font-size:1.2em;
+    text-align:center;
+}
+
+
+.login__input--submit
+{
+    width:50%;
+    margin-left:25%;
+    margin-bottom:1px;
+   
+}
+
+.register-href{
+    text-align:center;
+}
+
+.mp-bottom
+{
+    width:100%;
+    margin-top:140px;
+    display:flex;
+    justify-content: space-around;
+    margin-bottom:10px;
+}
+
+.bottom-numbers{
+    text-align:center;
+    border-radius:50%;
+    width:100px;
+    height: 100px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background: white;
 }
