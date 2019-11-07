@@ -1,16 +1,18 @@
 extends layout
 
 block content
-    if(message)
-      h2 #{message}
-    h1.display-4.m-b-2 #{msg}
-    
-    // login form
-    form(method='POST' action='/login')
-      div.form-group
-        label(for='email') Email:
-        input#email.form-control(type='email', placeholder='name@email.com' name='email')
-      div.form-group
-        label(for='pw') Password:
-        input#pw.form-control(type='password' name='password')
-      button#btnForm Sign in
+  .container
+  .mp-form
+    form.login(method='POST')
+      input.login__input(type='email' name='email' placeholder='Index@email' required='')
+      input.login__input(type='password' name='password' placeholder='Password' required='')
+      button.login__input.login__input--submit(type='submit') Login
+  .register-href
+    p Nie masz konta? 
+    a(href='register') Zarejestruj sie;
+  .mp-bottom
+    .bottom-numbers
+      h4 ikona numerka
+    .bottom-numbers
+      h4 ikona liczby osob
+
