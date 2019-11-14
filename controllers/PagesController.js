@@ -61,6 +61,12 @@ exports.student = async (req, res) => {
         });
     }
 };
+
+exports.administrator = async (req, res) => {
+    res.render('administrator.pug', {});
+};
+
+
 exports.signOut = async (req, res) => {
     const auth = new Auth();
     await auth.signOut();
