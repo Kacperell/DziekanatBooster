@@ -34,7 +34,6 @@
     "babel-preset-stage-0": "^6.24.1"
   },
   "scripts": {
-    "start2": "node ./server.js",
     "start": "node ./server.js",
     "watch": "nodemon ./server.js --ignore public/",
     "dev": "concurrently \"npm run watch\" \"npm run assets\" --names \"\" --prefix name",
