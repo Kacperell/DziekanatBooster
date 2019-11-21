@@ -1,18 +1,20 @@
 const { Auth } = require("../firebase/index");
 const firebase = require("firebase");
 
+//Dodawanie nowego numerka do bazy danych
 exports.newOrder = async (req, res) => {
   const ref = firebase
     .database()
     .ref()
-    .child("orders");
+    .child("orders"); //Podpięcie do "Tabeli" orders
 
   // console.log("========================================");
   // console.log(ref);
-  let orders = { id: 1, ornerNumber: 1, isActive: false };
-  let pushOrder = ref.push(orders);
+  const orders = { id: 1, ornerNumber: 1, isActive: false };
+  const pushOrder = ref.push(orders);
 };
 
+//Zmiana pola isActive dla ostatnio dodanego orderu
 exports.getNextOrder = async (req, res) => {
   const ref = firebase
     .database()
@@ -24,12 +26,12 @@ exports.getNextOrder = async (req, res) => {
     .limitToLast(1)
     .on("child_added", function(snapshot) {
       console.log("new record", snapshot.val());
-    });
+    }); //Pobranie ostatnio dodanego elementu
 
   ref.child(lastRecord.key).update({ isActive: true });
 };
 
-//TODO, WHERE
+//TODO, WHERE = pobranie elementu z polem isActive = true
 exports.getFinishOrder = async (req, res) => {
   const ref = firebase
     .database()
@@ -43,5 +45,5 @@ exports.getFinishOrder = async (req, res) => {
       console.log("new record", snapshot.val());
     });
 
-  ref.child(lastRecord.key).update({ isActive: true });
+  const updateOrderRef = ref.child(lastRecord.key).update({ isActive: true });
 };
