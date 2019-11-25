@@ -6,3 +6,52 @@ block content
       h2 #{message}
     h2  Student panel
     a(href='/signOut') Wyloguj
+
+    p(style='text-align:center;')
+  img(src='https://i.ibb.co/xgyJPwR/logo.png' alt='logo' width='20%' height='20%')
+h1  NR ALBUMU 
+br
+br
+p(style='text-align:center;')  AKTUALNY NUMER 
+p(style='text-align:center;')
+  img(src='https://i.ibb.co/0Bs9rbD/4.png' width='10%' height='10%' alt='aktualny nr')
+br
+p(style='text-align:center;')  KOLEJKA 
+.kol
+  | 11 12 ... 20 21
+p(style='text-align:center;')  TW&Oacute;J NUMER 
+p(style='text-align:center;')
+  img(src='https://i.ibb.co/ZNw0bJw/7.png' width='10%' height='10%' alt='twój nr')
+p(style='text-align:center;')
+  a#button.button(href='#') ZARZ&Aogon;DZAJ
+.bg-modal
+  .modal-contents
+    .close +
+    form(action='')
+      a#button2.button(href='#') Zarezerwuj teraz
+      br
+      a#button2.button(href='#') Zarezerwuj z dat&aogon;
+      br
+      a#button2.button(href='#') Odwo&lstrok;aj
+      br
+.bg-modal2
+  .modal-contents2
+    .close2 +
+    form(action='')
+      p(style='text-align: center') Wizyta zosta&lstrok;a zarejestrowana. Tw&oacute;j numer w kolejce to:
+      p(style='text-align:center;')
+        img(src='https://i.ibb.co/ZNw0bJw/7.png' width='10%' height='10%' alt='twój nr')
+      p(style='text-align: center') Liczba os&oacute;b w kolejce to: X
+script.
+  document.getElementById('button').addEventListener("click", function() {
+  document.querySelector('.bg-modal').style.display = "flex";
+  });
+  document.querySelector('.close').addEventListener("click", function() {
+  document.querySelector('.bg-modal').style.display = "none";
+  });
+  document.getElementById('button2').addEventListener("click", function() {
+  document.querySelector('.bg-modal2').style.display = "flex";
+  });
+  document.querySelector('.close2').addEventListener("click", function() {
+  document.querySelector('.bg-modal2').style.display = "none";
+  });
