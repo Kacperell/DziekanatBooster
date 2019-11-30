@@ -7,12 +7,18 @@ const {
 
 
 router.get('/', PagesController.home);
-router.get('/register', PagesController.form);
+
+router.get('/register', PagesController.formRegister);
 router.post('/register', PagesController.register);
+
 router.get('/login', PagesController.formLogin);
 router.post('/login', catchErrors(PagesController.login));
+
 router.get('/signOut', catchErrors(PagesController.signOut));
+
 router.get('/student', catchErrors(PagesController.student));
+router.post('/student', PagesController.addToOrders)
+
 router.get('/administrator', catchErrors(PagesController.administrator));
 
 
