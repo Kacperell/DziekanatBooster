@@ -1,18 +1,20 @@
+require('dotenv').config()
 const firebase = require('firebase')
 
 // TODO: add credentials to env variables
 const config = {
-    apiKey: "AIzaSyBWnZr2wGHpnGTSJbzXXsrQdceBeNnI-Z8",
-    authDomain: "dziekanatbooster.firebaseapp.com",
-    databaseURL: "https://dziekanatbooster.firebaseio.com",
-    projectId: "dziekanatbooster",
-    storageBucket: "dziekanatbooster.appspot.com",
-    messagingSenderId: "911805179723",
-    appId: "1:911805179723:web:40ee7e9159c29bb837aace"
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId
 }
 
 firebase.initializeApp(config)
 
 module.exports = {
-    Auth: require('./auth')
+    Auth: require('./auth'),
+    Database: require('./db')
 }

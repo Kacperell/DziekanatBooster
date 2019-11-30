@@ -1,57 +1,17 @@
 extends layout
-
 block content
-
     if(message)
+      h1 #{email}
       h2 #{message}
-    h2  Student panel
+    .mp-form-container
+      form.mp-form(method='POST' action='/student')
+        .mp-form__input-container
+          .mp-form__input-container--icon
+            img(src='../images/keylogo.png' width='24px')
+          input.mp-form__input-container--field(type='datetime-local' name='time' placeholder='Time' required='')
+        button.mp-button.mp-form__input--submit(type='submit') Dodaj do kolejki
+    .mp-footer
+      img.mp-footer__logo(src='../images/zutlogo.png' alt='zut logo')
+      h4.mp-footer__text Moze kolejka tu bedzie w stopce
+      .mp-footer__rightcorner
     a(href='/signOut') Wyloguj
-
-    p(style='text-align:center;')
-  img(src='https://i.ibb.co/xgyJPwR/logo.png' alt='logo' width='20%' height='20%')
-h1  NR ALBUMU 
-br
-br
-p(style='text-align:center;')  AKTUALNY NUMER 
-p(style='text-align:center;')
-  img(src='https://i.ibb.co/0Bs9rbD/4.png' width='10%' height='10%' alt='aktualny nr')
-br
-p(style='text-align:center;')  KOLEJKA 
-.kol
-  | 11 12 ... 20 21
-p(style='text-align:center;')  TW&Oacute;J NUMER 
-p(style='text-align:center;')
-  img(src='https://i.ibb.co/ZNw0bJw/7.png' width='10%' height='10%' alt='twój nr')
-p(style='text-align:center;')
-  a#button.button(href='#') ZARZ&Aogon;DZAJ
-.bg-modal
-  .modal-contents
-    .close +
-    form(action='')
-      a#button2.button(href='#') Zarezerwuj teraz
-      br
-      a#button2.button(href='#') Zarezerwuj z dat&aogon;
-      br
-      a#button2.button(href='#') Odwo&lstrok;aj
-      br
-.bg-modal2
-  .modal-contents2
-    .close2 +
-    form(action='')
-      p(style='text-align: center') Wizyta zosta&lstrok;a zarejestrowana. Tw&oacute;j numer w kolejce to:
-      p(style='text-align:center;')
-        img(src='https://i.ibb.co/ZNw0bJw/7.png' width='10%' height='10%' alt='twój nr')
-      p(style='text-align: center') Liczba os&oacute;b w kolejce to: X
-script.
-  document.getElementById('button').addEventListener("click", function() {
-  document.querySelector('.bg-modal').style.display = "flex";
-  });
-  document.querySelector('.close').addEventListener("click", function() {
-  document.querySelector('.bg-modal').style.display = "none";
-  });
-  document.getElementById('button2').addEventListener("click", function() {
-  document.querySelector('.bg-modal2').style.display = "flex";
-  });
-  document.querySelector('.close2').addEventListener("click", function() {
-  document.querySelector('.bg-modal2').style.display = "none";
-  });
