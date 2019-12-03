@@ -1,8 +1,17 @@
 extends layout
-
 block content
-
     if(message)
+      h1 #{email}
       h2 #{message}
-    h2  Student panel
+    .mp-form-container
+      form.mp-form(method='POST' action='/student')
+        .mp-form__input-container
+          .mp-form__input-container--icon
+            img(src='../images/keylogo.png' width='24px')
+          input.mp-form__input-container--field(type='datetime-local' name='time' placeholder='Time' required='')
+        button.mp-button.mp-form__input--submit(type='submit') Dodaj do kolejki
+    .mp-footer
+      img.mp-footer__logo(src='../images/zutlogo.png' alt='zut logo')
+      h4.mp-footer__text Moze kolejka tu bedzie w stopce
+      .mp-footer__rightcorner
     a(href='/signOut') Wyloguj

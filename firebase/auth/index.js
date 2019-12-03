@@ -9,41 +9,35 @@ class Auth {
         }
     }
 
-    async register() {
-        let errors;
-        await this.auth.createUserWithEmailAndPassword(this.email, this.password).catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
-            errors = error.message;
-        });
-        return errors;
+    async register () {
+        try {
+            await this.auth.createUserWithEmailAndPassword(this.email, this.password)
+            return {message: 'Succesfully register'}
+        } catch (e) {
+            return {error: e.message}
+        }
     }
 
     async signIn() {
-        let errors;
-        await this.auth.signInWithEmailAndPassword(this.email, this.password).catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
-            errors = error.message;
-        });
-        return errors;
-    }
-    async isUser() {
-        let User;
-        await this.auth.onAuthStateChanged(function (user) {
-            if (user) {
-                User = user;
-            }
-        });
-        return User;
+        try {
+            await this.auth.signInWithEmailAndPassword(this.email, this.password)
+            return {message: 'Succesfully sign in'}
+        } catch (e) {
+            return {error: e.message}
+        }
     }
 
     async signOut() {
-        this.auth.signOut().then(() => {
-            console.log('Succesfully sign out');
-        }).catch((error) => {
-            console.log(`Some problems has occured while signing out ${error}`);
-        });
+        try {
+            await this.auth.signOut()
+            return {message: 'Succesfully sign out'}
+        } catch (e) {
+            return {error: e.message}
+        }
+    }
+
+    async currentUser() {
+        return await this.auth.currentUser
     }
 }
 

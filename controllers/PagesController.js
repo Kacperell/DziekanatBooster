@@ -1,74 +1,22 @@
 const {
-    Auth
-} = require('../firebase/index')
+    register,
+    formRegister,
+    login,
+    formLogin,
+    signOut,
+    student,
+    administrator,
+    home,
+    addToOrders
+} = require('./utils')
 
-exports.home = async (req, res) => {
-    res.render('home.pug', {
-        mesycz: 'DziekanatBooster - Good Luck 💛 HOMEPAGE',
-    });
-};
-
-exports.form = async (req, res, next) => {
-    res.render('form.pug', {
-        msg: 'Sign Up to tremendous dziekanat booster'
-    });
-};
-exports.formLogin = async (req, res, next) => {
-    res.render('login.pug', {
-        msg: 'Sign In to tremendous dziekanat booster'
-    });
-};
-
-exports.login = async (req, res, next) => {
-    const auth = new Auth(req.body);
-    const error = await auth.signIn();
-    if (!error) {
-        res.redirect('/student');
-    } else {
-        res.render('error.pug', {
-            message: `${error} `,
-            msg: 'Sign Up to tremendous dziekanat booster'
-        });
-    }
-};
-
-exports.register = async (req, res) => {
-    try {
-        const auth = new Auth(req.body);
-        const error = await auth.register();
-        if (!error) {
-            res.redirect('/login');
-        } else {
-            res.render('error.pug', {
-                message: `${error} `
-            });
-        }
-    } catch (e) {
-        return e
-    }
-};
-
-exports.student = async (req, res) => {
-    const auth = new Auth();
-    const user = await auth.isUser();
-    if (user) {
-        res.render('student.pug', {
-            // message: ``
-        });
-    } else {
-        res.render('login.pug', {
-            message: `Musisz byc zalogowany `
-        });
-    }
-};
-
-exports.administrator = async (req, res) => {
-    res.render('administrator.pug', {});
-};
-
-
-exports.signOut = async (req, res) => {
-    const auth = new Auth();
-    await auth.signOut();
-    res.redirect('/login');
-};
+exports.home = async (req, res) => home(req, res)
+exports.formRegister = async (req, res) => formRegister(req, res)
+exports.formLogin = async (req, res) => formLogin(req, res)
+exports.login = async (req, res, next) => login(req, res)
+exports.register = async (req, res) => register(req, res)
+exports.student = async (req, res) => student(req, res)
+exports.addToOrders = async (req, res) => addToOrders(req, res)
+exports.administrator = async (req, res) => administrator(req, res)
+exports.signOut = async (req, res) => signOut(req, res)
+exports.addToOrders = async (req, res) => addToOrders(req, res)
