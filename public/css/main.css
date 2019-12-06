@@ -1,10 +1,35 @@
 @import "login-register.css";
 @import "administrator.css";
 
+html{
+    height:100%; 
+}
 body
 {
     font-family: 'Lora', serif; 
-    margin:0;
-    background-image: linear-gradient(to right, #218c50, #008278, #00749d, #005fad, #2d419c);
+    min-height:100%; 
+    padding:0; 
+    margin:0; 
+    position:relative;
+
+    background-image: linear-gradient(to right, 
+    #218c50, #008278, #00749d,
+     #005fad, #2d419c);
 }
- 
+body::after {
+    content: '';
+    display: block;
+    height: 70px; 
+  }
+
+  .btn{ 
+    color: white;
+    min-height:40px;
+    border: none;
+  } 
+  
+
+/* gdzies do pliku z css studneta */
+.mp-form__input-container select {
+  width: 100%;
+}
