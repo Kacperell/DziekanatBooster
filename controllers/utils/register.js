@@ -1,14 +1,19 @@
-const {Auth} = require('../../firebase/index')
+const {
+    Auth
+} = require('../../firebase/index')
 
-module.exports = async function register (req, res) {
+module.exports = async function register(req, res) {
     const auth = new Auth(req.body);
-    const {message, error} = await auth.register()
-
+    const {
+        message,
+        error
+    } = await auth.register()
+    console.log(error);
     if (!error) {
         res.redirect('/student');
     } else {
-        res.render('error.pug', {
-            message: 'Coś poszło nie tak podczas rejestracji 💩',
+        res.render('login.pug', {
+            message: error,
             previousState: '/register'
         })
     }

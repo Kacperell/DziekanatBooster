@@ -1,22 +1,46 @@
 extends layout
 
 block content
+  .mp-container
+    // h1.display-4.m-b-2 #{msg}
+    // register form
+
+
   .mp-form-container
+    if message
+        h2.errorMessage #{message}
     .mp-form__header
       h1 Register
-    form.mp-form(method='POST' action='/register')
+    form.mp-form(method='POST' action='/register' onsubmit='return checkForm(this);')
       .mp-form__input-container
         .mp-form__input-container--icon
           img(src='../images/userlogo.png' width='24px')
         input.mp-form__input-container--field(type='email' name='email' placeholder='Index@email' required='')
+
       .mp-form__input-container
         .mp-form__input-container--icon
           img(src='../images/keylogo.png' width='24px')
         input.mp-form__input-container--field(type='password' name='password' placeholder='Password' required='')
-      button.mp-button.mp-form__input--submit(type='submit') Sign up
+
+      .mp-form__input-container
+        .mp-form__input-container--icon
+          img(src='../images/keylogo.png' width='24px')
+        input.mp-form__input-container--field(type='password' name='password2' placeholder='Repeat password' required='')
+        
+      button.btn.mp-button.mp-form__input--submit(type='submit') Sign up
     .no-account-container
       a.no-account-container__message(href='login') Back to log in page
   .mp-footer
     img.mp-footer__logo(src='../images/zutlogo.png' alt='zut logo')
     h4.mp-footer__text Moze kolejka tu bedzie w stopce
     .mp-footer__rightcorner
+
+  script.
+    function checkForm(form){
+      if (form.password.value != form.password2.value)
+      {
+        alert("Passwords dont match!");
+        form.password.focus();
+        return false;
+      }
+    }
