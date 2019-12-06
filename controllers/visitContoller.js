@@ -10,6 +10,10 @@ exports.addVisit = async (req, res) => {
     const category = req.params.category;
     const auth = new Auth();
     const currentUser = await auth.currentUser();
+    if (!currentUser) {
+        res.json('access denied');
+        return;
+    }
     db.collection("visits").add({
             user: currentUser.uid,
             time: time,
@@ -40,6 +44,13 @@ exports.readVisit = async (req, res) => {
 };
 exports.deleteVisit = async (req, res) => {
     const id = req.params.id;
+    const auth = new Auth();
+    const currentUser = await auth.currentUser();
+    if (!currentUser) {
+        res.json('access denied');
+        return;
+        // jeszcz sprwadzcic czy to nie inny uzytkwonik porownac uid and user z tego dokumentu 
+    }
     db.collection("visits").doc(id).delete().then(function () {
         console.log("Document successfully deleted!");
         res.json("Document successfully deleted!")
