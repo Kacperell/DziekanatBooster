@@ -1,10 +1,14 @@
 @import "login-register.css";
 @import "administrator.css";
 
-body
-{
-    font-family: 'Lora', serif; 
-    margin:0;
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
     background-image: linear-gradient(to right, #218c50, #008278, #00749d, #005fad, #2d419c);
 }
- 
+
+
+/* gdzies do pliku z css studneta */
+.mp-form__input-container select {
+    width: 100%;
+}

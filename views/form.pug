@@ -2,6 +2,8 @@ extends layout
 
 block content
   .mp-form-container
+    if message
+        h2.errorMessage #{message}
     .mp-form__header
       h1 Register
     form.mp-form(method='POST' action='/register')

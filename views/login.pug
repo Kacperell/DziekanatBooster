@@ -2,7 +2,9 @@ extends layout
 
 block content
   .mp-container
-  .mp-form-container
+  if message
+        h2.errorMessage #{message}
+  .mp-form-container   
     .mp-form__header
       h1 Log in
     form.mp-form(method='POST')
