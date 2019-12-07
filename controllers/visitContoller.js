@@ -6,6 +6,8 @@ require("firebase/firestore");
 var db = firebase.firestore();
 
 exports.addVisit = async (req, res) => {
+    //adding visit to firestore return visit id to put it to li id
+    const date = req.params.date;
     const time = req.params.time;
     const category = req.params.category;
     const auth = new Auth();
@@ -16,6 +18,7 @@ exports.addVisit = async (req, res) => {
     }
     db.collection("visits").add({
             user: currentUser.uid,
+            date: date,
             time: time,
             category: category
         })
@@ -28,6 +31,7 @@ exports.addVisit = async (req, res) => {
         });
 };
 exports.readVisit = async (req, res) => {
+    //loading data of a particular visit,used after adding a visit to firestrone=> to insert it into ul
     const id = req.params.id;
     var visit = db.collection("visits").doc(id);
     visit.get().then(function (doc) {
@@ -43,6 +47,7 @@ exports.readVisit = async (req, res) => {
     });
 };
 exports.deleteVisit = async (req, res) => {
+    //dete vist from firestory by user clik on li button -odowałaj wizytę
     const id = req.params.id;
     const auth = new Auth();
     const currentUser = await auth.currentUser();
@@ -61,6 +66,7 @@ exports.deleteVisit = async (req, res) => {
 
 };
 exports.checkUserVisits = async (req, res) => {
+    //checking user's visits(firestore) after logging in to his panel
     const auth = new Auth();
     const currentUser = await auth.currentUser();
     db.collection("visits").where("user", "==", currentUser.uid)
@@ -72,6 +78,26 @@ exports.checkUserVisits = async (req, res) => {
                 arrayData.push(tempArrayData);
             });
             res.json(arrayData);
+        })
+        .catch(function (error) {
+            console.log("Error getting documents: ", error);
+            res.json(error);
+        });
+
+};
+
+
+exports.checkFreeVisitsHours = async (req, res) => {
+    const date = req.params.date;
+    //checking free houres for date
+    db.collection("visits").where("date", "==", date)
+        .get()
+        .then(function (querySnapshot) {
+            let unavailableHours = [];
+            querySnapshot.forEach(function (doc) {
+                unavailableHours.push(doc.data().time);
+            });
+            res.json(unavailableHours);
         })
         .catch(function (error) {
             console.log("Error getting documents: ", error);
