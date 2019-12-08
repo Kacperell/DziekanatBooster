@@ -1,5 +1,6 @@
 @import "login-register.css";
 @import "administrator.css";
+@import "student.css";
 
 html{
     height:100%; 
@@ -11,7 +12,7 @@ body
     padding:0; 
     margin:0; 
     position:relative;
-
+    color:white;
     background-image: linear-gradient(to right, 
     #218c50, #008278, #00749d,
      #005fad, #2d419c);
