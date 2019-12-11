@@ -22,7 +22,6 @@ router.post('/student', PagesController.addToOrders);
 
 router.get('/administrator', catchErrors(PagesController.administrator));
 
-//api 😊
 router.post('/addVisist/:date/:time/:category', catchErrors(visitContoller.addVisit));
 router.get('/readVisit/:id', catchErrors(visitContoller.readVisit));
 router.post('/deleteVisit/:id', catchErrors(visitContoller.deleteVisit));
