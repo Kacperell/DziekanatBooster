@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+
 const javascript = {
     test: /\.(js)$/,
     use: [{
@@ -34,7 +35,7 @@ const config = {
         maxAssetSize: 512000
     },
     entry: {
-        App: './public/js/MainPublic.js'
+        App: './client/main.js'
     },
 
     devtool: 'source-map',
