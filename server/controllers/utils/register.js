@@ -12,7 +12,7 @@ module.exports = async function register(req, res) {
     if (!error) {
         res.redirect('/student');
     } else {
-        res.render('login.pug', {
+        res.render('form.pug', {
             message: error,
             previousState: '/register'
         })

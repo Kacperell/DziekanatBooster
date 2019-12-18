@@ -8,6 +8,12 @@ var db = firebase.firestore();
 exports.addVisit = async (req, res) => {
     //adding visit to firestore return visit id to put it to li id
     const date = req.params.date;
+    const checkDate = new Date(date);
+    const day = checkDate.getDay();
+    if (day == 0 || day == 6) {
+        //Nie można dodać wizyty w weekend
+        return
+    };
     const time = req.params.time;
     const category = req.params.category;
     const auth = new Auth();

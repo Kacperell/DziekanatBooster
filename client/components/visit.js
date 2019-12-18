@@ -57,6 +57,12 @@ function addVisitToUlStudentPanel(visitID) {
 function addVisitToFirestore(e) {
     e.preventDefault();
     const dataPicker = document.querySelector('.dataPicker');
+    const checkDate = new Date(dataPicker.value);
+    const day = checkDate.getDay();
+    if (day == 0 || day == 6) {
+        alert("Nie można dodać wizyty w weekend");
+        return
+    };
     const timePicker = document.querySelector('.timePicker');
     const categorySelect = document.querySelector('.categorySelect');
     axios.post(`/addVisist/${dataPicker.value}/${timePicker.value}/${categorySelect.value}`)
