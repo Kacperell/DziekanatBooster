@@ -3,42 +3,42 @@ block content
     if(message)
       h1 #{email}
       h2 #{message}
-    .mp-form-container
-      form.mp-form(method='POST' action='/student' class="addVisitForm")
+    .mp-form-container2
+      form.mp-form2(method='POST' action='/student' class="addVisitForm")
         .mp-form__input-container
-          .mp-form__input-container--icon
+          .mp-form__input-container--icon2
             img(src='../images/callendar.svg' width='24px' height='24px')
-          input.mp-form__input-container--field(type='date' name='time' required='' class="dataPicker")
+          input.mp-form__input-container--field2(type='date' name='time' required='' class="dataPicker")
         .mp-form__input-container
-          .mp-form__input-container--icon
+          .mp-form__input-container--icon2
             img(src='../images/clock.svg' width='24px' height='24px')
           select.timePicker
         .mp-form__input-container
-          .mp-form__input-container--icon
+          .mp-form__input-container--icon2
             img(src='../images/category4.png' width='24px' height='24px')
           //- input.mp-form__input-container--field(type='date' name='time' placeholder='Time' required='' class="dataPicker")
           select.categorySelect
-            option(default value='inne') Wybierz kategorię
+            option(default value='') Wybierz kategorię
             option(value='PodbicieLegitymacji') Podbicie Legitymacji
             option(value='stypendium') Stypendium
             option(value='inne') Inne
 
 
 
-        button.btn.mp-button.mp-form__input--submit(type='submit') Dodaj do kolejki
+        button.btn2.mp-button2.mp-form__input--submit2(type='submit') Dodaj do kolejki
     
 
 
 
-    .mp-visitsList
+    .mp-visitsList2
       ul
     
-    .mp-footer
-      img.mp-footer__logo(src='../images/zutlogo.png' alt='zut logo')
-      h4.mp-footer__text Moze kolejka tu bedzie w stopce
-      .mp-footer__rightcorner
+    .mp-footer2
+      img.mp-footer__logo2(src='../images/zutlogo.png' alt='zut logo')
+      h4.mp-footer__text2 Moze kolejka tu bedzie w stopce
+      .mp-footer__rightcorner2
 
 
 
-
-    a(href='/signOut') Wyloguj
+    
+    a.logout-container(href='/signOut') Wyloguj
