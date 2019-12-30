@@ -2,16 +2,21 @@ extends layout
 
 block content
   .mp-container
-    // h1.display-4.m-b-2 #{msg}
-    // register form
-
-
-  .mp-form-container
     if message
-        h2.errorMessage #{message}
+     .mp-error-background
+       .mp-error-container
+         .mp-form__header
+           h2 Register failed
+         .errorMessage-container
+            .errorMessage
+              each element in message
+               li.message
+                span #{element}
+         button.btn.mp-error-container--button.mp-form__input--submit(type='submit' class="DOMOkay") Ok
+  .mp-form-container
     .mp-form__header
       h1 Register
-    form.mp-form(method='POST' action='/register' onsubmit='return checkForm(this);')
+    form.mp-form(method='POST' action='/register' class="DOMformContainer")
       .mp-form__input-container
         .mp-form__input-container--icon
           img(src='../images/userlogo.png' width='24px')
@@ -20,12 +25,12 @@ block content
       .mp-form__input-container
         .mp-form__input-container--icon
           img(src='../images/keylogo.png' width='24px')
-        input.mp-form__input-container--field(type='password' name='password' placeholder='Password' required='')
+        input.mp-form__input-container--field(type='password' name='password' class="DOMpassword1Container" placeholder='Password' required='')
 
       .mp-form__input-container
         .mp-form__input-container--icon
           img(src='../images/keylogo.png' width='24px')
-        input.mp-form__input-container--field(type='password' name='password2' placeholder='Repeat password' required='')
+        input.mp-form__input-container--field(type='password' name='password2' class="DOMpassword2Container" placeholder='Repeat password' required='')
         
       button.btn.mp-button.mp-form__input--submit(type='submit') Sign up
     .no-account-container
@@ -34,13 +39,3 @@ block content
     img.mp-footer__logo(src='../images/zutlogo.png' alt='zut logo')
     h4.mp-footer__text Moze kolejka tu bedzie w stopce
     .mp-footer__rightcorner
-
-  script.
-    function checkForm(form){
-      if (form.password.value != form.password2.value)
-      {
-        alert("Passwords dont match!");
-        form.password.focus();
-        return false;
-      }
-    }
