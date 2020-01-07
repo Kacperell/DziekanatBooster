@@ -5,7 +5,7 @@ const {
 module.exports = async function register(req, res) {
     const auth = new Auth(req.body);
     let errorTab = [];
-    console.log(req.body);
+
     const {
         message,
         error

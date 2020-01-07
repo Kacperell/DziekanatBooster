@@ -11,7 +11,7 @@ module.exports = async function student(req, res) {
         });
     } else {
         res.render('login.pug', {
-            message: `Musisz byc zalogowany `
+            message: 'Musisz byc zalogowany'
         });
     }
 }

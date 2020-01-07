@@ -1,7 +1,6 @@
 require('dotenv').config()
 const firebase = require('firebase')
 
-// TODO: add credentials to env variables
 const config = {
     apiKey: process.env.apiKey,
     authDomain: process.env.authDomain,
