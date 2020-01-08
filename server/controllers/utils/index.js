@@ -6,6 +6,5 @@ module.exports = {
     login: require('./login'),
     register: require('./register'),
     signOut: require('./signOut'),
-    student: require('./student'),
-    addToOrders: require('./addToOrders')
+    student: require('./student')
 }
