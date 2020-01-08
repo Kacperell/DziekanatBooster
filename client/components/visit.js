@@ -98,14 +98,37 @@ function setDefoultOptionsTimePikcer() {
     //gdy zmieniamy daty by znów byeła pełna pula godzin, potem sprwadzamy i ewentalnie usuwamy
     const timePicker = document.querySelector('.timePicker');
     timePicker.innerHTML = '';
-    const hours = ['11:00', '11:15', '11:30', '11:45', '12:00', '12:15', '12:30'];
+    const dataPicker = document.querySelector('.dataPicker');
+    const date = dataPicker.value;
+    console.log(dataPicker.value);
+    const checkDate = new Date(dataPicker.value);
+    const day = checkDate.getDay();
+    let hours=[];
+    
+
+    
+    if (day==3){
+    hours = ['13:00','13:15','13:30','13:45','14:00', '14:15', '14:30', '14:45', '15:00', '15:15', '15:30', '15:45'];
+    }
+   
+    else if(day==5 || day== 6 ||day== 0){
+    hours =['','','','','', '', '', '', '', '', '', ''];
+    }
+    
+    else if(day==1 || day== 2 ||day== 4){
+     hours = ['10:00','10:15','10:30','10:45','11:00', '11:15', '11:30', '11:45', '12:00', '12:15', '12:30', '12:45'];
+     }
+
     for (let i = 0; i < hours.length; i++) {
         let option = document.createElement('option');
         option.classList.add("timePickerOption");
         hours.value = hours[i];
         option.textContent = hours[i];
         timePicker.appendChild(option);
+      
+
     }
+
 }
 
 function checkFreeVisitsHours(e) {
