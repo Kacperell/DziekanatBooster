@@ -112,7 +112,7 @@ function setDefoultOptionsTimePikcer() {
     }
    
     else if(day==5 || day== 6 ||day== 0){
-    hours =['','','','','', '', '', '', '', '', '', ''];
+    hours =[];
     }
     
     else if(day==1 || day== 2 ||day== 4){
