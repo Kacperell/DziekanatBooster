@@ -123,6 +123,14 @@ function setDefoultOptionsTimePikcer() {
         checkFreeVisitsHours();
     }
 
+    //czy z przeszlosci
+    const TodayDate = new Date().setHours(0, 0, 0, 0);
+    if (TodayDate > checkDate) {
+        alert('Nie można wybrac daty z przeszłości');
+        dataPicker.valueAsDate = new Date();
+        checkFreeVisitsHours();
+        return;
+    }
     
 
     
