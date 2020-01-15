@@ -100,10 +100,29 @@ function setDefoultOptionsTimePikcer() {
     timePicker.innerHTML = '';
     const dataPicker = document.querySelector('.dataPicker');
     const date = dataPicker.value;
+    
     console.log(dataPicker.value);
     const checkDate = new Date(dataPicker.value);
-    const day = checkDate.getDay();
+    let day = checkDate.getDay();
     let hours=[];
+
+    
+    var today = new Date();
+
+    //dzien obecny
+    var currentDay=today.getDate();
+    console.log(currentDay);  
+
+    //dni w kalendarzu
+    let currentCallendarDay=checkDate.getDate();
+    console.log(currentCallendarDay);  
+
+    if(currentCallendarDay>currentDay+2){
+        window.alert('Wybierz max do 2 dni do przodu');
+        dataPicker.valueAsDate = new Date();
+        checkFreeVisitsHours();
+    }
+
     
 
     
