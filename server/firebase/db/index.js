@@ -70,6 +70,7 @@ class Database {
                     const tempArrayData = [doc.id, doc.data()];
                     arrayData.push(tempArrayData);
                 });
+                console.log(arrayData)
                 callback.json(arrayData);
             })
             .catch(function (error) {
