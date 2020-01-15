@@ -35,7 +35,7 @@ const config = {
         maxAssetSize: 512000
     },
     entry: {
-        App: './client/main.js'
+        App: './client/index.js'
     },
 
     devtool: 'source-map',
@@ -48,6 +48,7 @@ const config = {
     },
 
     module: {
+        // TODO: add bundled styles to public/dist
         rules: [javascript, styles]
     },
     plugins: [
