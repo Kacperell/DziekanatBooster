@@ -22,14 +22,23 @@ class Auth {
     async register () {
         try {
             await this.auth.createUserWithEmailAndPassword(this.email, this.password).then(res => {
-                tranporter.sendMail({
-                    to: this.email,
-                    from: 'dziekanatbooster@boost.pl',
-                    subject: 'Rejestracja',
-                    html: '<h1>Dziaa</h1>'
-                }).catch(err => {
-                    console.log(err);
+                console.log(res);
+                let user = firebase.auth().currentUser;
+                console.log("====");
+                console.log(user);
+                user.sendEmailVerification().then(function () {
+                    // Email sent.
+                }).catch(function (error) {
+                    // An error happened.
                 });
+                // tranporter.sendMail({
+                //     to: this.email,
+                //     from: 'dziekanatbooster@boost.pl',
+                //     subject: 'Rejestracja',
+                //     html: '<h1>Dziaa</h1>'
+                // }).catch(err => {
+                //     console.log(err);
+                // });
             })
             return {message: 'Succesfully register'}
         } catch (e) {
