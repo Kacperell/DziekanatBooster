@@ -24,8 +24,8 @@ class Auth {
             await this.auth.createUserWithEmailAndPassword(this.email, this.password).then(res => {
                 console.log(res);
                 let user = firebase.auth().currentUser;
-                console.log("====");
-                console.log(user);
+                // console.log("====");
+                // console.log(user);
                 user.sendEmailVerification().then(function () {
                     // Email sent.
                 }).catch(function (error) {
