@@ -3,41 +3,46 @@ block content
     if(message)
       h1 #{email}
       h2 #{message}
-    .mp-form-container
-      form.mp-form(method='POST' action='/student' class="addVisitForm")
-        .mp-form__input-container
-          .mp-form__input-container--icon
+    .formVisitContainer
+      form.addVisitForm(method='POST' action='/student' class="addVisitForm")
+        .formInput
+          .formInputIcon
             img(src='../images/callendar.svg' width='24px' height='24px')
-          input.mp-form__input-container--field(type='date' name='time' required='' class="dataPicker")
-        .mp-form__input-container
-          .mp-form__input-container--icon
+          input.formInputField(type='date' name='time' required='' class="dataPicker")
+        .formInput
+          .formInputIcon
             img(src='../images/clock.svg' width='24px' height='24px')
           select.timePicker
-        .mp-form__input-container
-          .mp-form__input-container--icon
+        .formInput
+          .formInputIcon
             img(src='../images/category4.png' width='24px' height='24px')
+          //- input.formInputField(type='date' name='time' placeholder='Time' required='' class="dataPicker")
           select.categorySelect
-            option(default value='inne') Wybierz kategorię
+            option(default value='') Wybierz kategorię
             option(value='PodbicieLegitymacji') Podbicie Legitymacji
-            option(value='stypendium') Stypendium
-            option(value='inne') Inne
+            option(value='Stypendium') Stypendium
+            option(value='Inne') Inne
 
 
 
-        button.btn.mp-button.mp-form__input--submit(type='submit') Dodaj do kolejki
+        button.btnStudent.buttonStudent.formInputSubmit(type='submit') Dodaj do kolejki
     
 
 
 
-    .mp-visitsList
+    .visitsList
       ul
-    
+    button.collapsible.content Zarządzaj
+    a.logoutContainer(href='/signOut') Wyloguj
+
     .mp-footer
       img.mp-footer__logo(src='../images/zutlogo.png' alt='zut logo')
       h4.mp-footer__text Moze kolejka tu bedzie w stopce
       .mp-footer__rightcorner
 
+     
 
 
 
-    a(href='/signOut') Wyloguj
+    
+    

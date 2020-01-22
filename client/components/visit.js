@@ -13,15 +13,15 @@ function removeVisitFiresotre(e) {
 }
 
 function pushToUl(id, date, time, category) {
-    const visitList = document.querySelector('.mp-visitsList ul');
+    const visitList = document.querySelector('.visitsList ul');
     let li = document.createElement('li');
     li.id = id;
     let spanTime = document.createElement('span');
     let spanDate = document.createElement('span');
     let spanCategory = document.createElement('span');
     let buttonCancel = document.createElement('button');
-    buttonCancel.classList.add('buttonCancelVisist');
-    buttonCancel.textContent = 'Odowłaj wizytę';
+    buttonCancel.classList.add('buttonCancelVisits');
+    buttonCancel.textContent = 'Odwołaj wizytę';
     spanTime.textContent = time;
     spanDate.textContent = date;
     spanCategory.textContent = category;
@@ -131,7 +131,6 @@ function setDefoultOptionsTimePikcer() {
         checkFreeVisitsHours();
         return;
     }
-    
 
     
     if (day==3){
