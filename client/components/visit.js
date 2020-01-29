@@ -20,15 +20,19 @@ function pushToUl(id, date, time, category) {
     let spanDate = document.createElement('span');
     let spanCategory = document.createElement('span');
     let buttonCancel = document.createElement('button');
+    let newDiv = document.createElement("div");
     buttonCancel.classList.add('buttonCancelVisits');
     buttonCancel.textContent = 'Odwołaj wizytę';
     spanTime.textContent = time;
     spanDate.textContent = date;
     spanCategory.textContent = category;
-    li.appendChild(spanTime);
-    li.appendChild(spanDate);
-    li.appendChild(spanCategory);
+
+    newDiv.appendChild(spanTime);
+    newDiv.appendChild(spanDate);
+    newDiv.appendChild(spanCategory);
+    li.appendChild(newDiv);
     li.appendChild(buttonCancel);
+
     visitList.appendChild(li);
     buttonCancel.addEventListener('click', removeVisitFiresotre, true);
 }
@@ -100,24 +104,24 @@ function setDefoultOptionsTimePikcer() {
     timePicker.innerHTML = '';
     const dataPicker = document.querySelector('.dataPicker');
     const date = dataPicker.value;
-    
+
     console.log(dataPicker.value);
     const checkDate = new Date(dataPicker.value);
     let day = checkDate.getDay();
-    let hours=[];
+    let hours = [];
 
-    
+
     var today = new Date();
 
     //dzien obecny
-    var currentDay=today.getDate();
-    console.log(currentDay);  
+    var currentDay = today.getDate();
+    console.log(currentDay);
 
     //dni w kalendarzu
-    let currentCallendarDay=checkDate.getDate();
-    console.log(currentCallendarDay);  
+    let currentCallendarDay = checkDate.getDate();
+    console.log(currentCallendarDay);
 
-    if(currentCallendarDay>currentDay+2){
+    if (currentCallendarDay > currentDay + 2) {
         window.alert('Wybierz max do 2 dni do przodu');
         dataPicker.valueAsDate = new Date();
         checkFreeVisitsHours();
@@ -132,18 +136,14 @@ function setDefoultOptionsTimePikcer() {
         return;
     }
 
-    
-    if (day==3){
-    hours = ['13:00','13:15','13:30','13:45','14:00', '14:15', '14:30', '14:45', '15:00', '15:15', '15:30', '15:45'];
+
+    if (day == 3) {
+        hours = ['13:00', '13:15', '13:30', '13:45', '14:00', '14:15', '14:30', '14:45', '15:00', '15:15', '15:30', '15:45'];
+    } else if (day == 5 || day == 6 || day == 0) {
+        hours = [];
+    } else if (day == 1 || day == 2 || day == 4) {
+        hours = ['10:00', '10:15', '10:30', '10:45', '11:00', '11:15', '11:30', '11:45', '12:00', '12:15', '12:30', '12:45'];
     }
-   
-    else if(day==5 || day== 6 ||day== 0){
-    hours =[];
-    }
-    
-    else if(day==1 || day== 2 ||day== 4){
-     hours = ['10:00','10:15','10:30','10:45','11:00', '11:15', '11:30', '11:45', '12:00', '12:15', '12:30', '12:45'];
-     }
 
     for (let i = 0; i < hours.length; i++) {
         let option = document.createElement('option');
@@ -151,7 +151,7 @@ function setDefoultOptionsTimePikcer() {
         hours.value = hours[i];
         option.textContent = hours[i];
         timePicker.appendChild(option);
-      
+
 
     }
 

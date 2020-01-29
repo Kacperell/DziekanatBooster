@@ -1,159 +1,202 @@
-.txt{
-	text-align:center;
-	color: white; 
-	font-weight: 400;
+.txt {
+  text-align: center;
+  color: white;
+  font-weight: 400;
 }
 
-.logoutContainer{
-    display: flex;
-    align-items:center;
-    color: white;
-	border: none;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:20px;
-	background-color: #2D419C;
-	padding: 10px;
-	margin-top:5px;
-    min-width: 50px;
-	font-size:1.1em;
-    text-decoration: none;
-    max-width: 62.5px;
-    box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.15);
-    font-family: Arial, Helvetica, sans-serif;
+.logoutContainer {
+  display: flex;
+  align-items: center;
+  color: white;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: #2D419C;
+  padding: 10px;
+  margin-top: 5px;
+  min-width: 50px;
+  font-size: 1.1em;
+  text-decoration: none;
+  max-width: 62.5px;
+  box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.15);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.buttonCancelVisits{
-    color: white;
-    min-height:40px;
-    border: none;
-    margin-left:5px;
-    margin-right:auto;
-    background-color: #2D419C;
-    margin-top:5px;
-    min-width: 100px;
-    font-size:0.9em;
-    font-weight:500;
-    box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.15);
+.buttonCancelVisits {
+  color: white;
+  min-height: 40px;
+  border: none;
+  margin-left: 5px;
+  margin-right: auto;
+  background-color: #2D419C;
+  margin-top: 5px;
+  min-width: 100px;
+  font-size: 0.9em;
+  font-weight: 500;
+  box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.15);
 }
+
 .collapsible {
-  
-    background-color: #2D419C;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 15%;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: 15px;
-    min-height:40px;
 
-    margin-left:auto;
-    margin-right:auto;
+  background-color: #2D419C;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 15%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  min-height: 40px;
 
-    margin-top:5px;
-    min-width: 100px;
-    font-size:1.1em;
-  }
-  
-  .collapsible:after {
-    
-    color: white;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .active:after {
-    content: "\2212";
-  
-  }
-  
-  .content {
-    padding: 0 18px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-      color: white;
-  
-  }
+  margin-left: auto;
+  margin-right: auto;
 
-
-.visitsList{
-    font-size:1.1em;
+  margin-top: 5px;
+  min-width: 100px;
+  font-size: 1.1em;
 }
 
-.btnStudent{ 
-    color: white;
-    min-height:40px;
-    border: none;
-  } 
+.collapsible:after {
 
-.formVisitContainer{
-    margin-top:20px;
-    margin-bottom:50px;
-    min-width:250px;
-    max-width:40%;
-    box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.15);
-	background-color: #ffffff;
-	padding-bottom: 20px;
-	padding-top: 20px;
-    border-radius:5px;
-    margin-left:auto;  
-    margin-right:auto;  
-    }
-.addVisitForm
-{  
-    padding-left:10%;
-    padding-right:10%;
-    text-align:center;
-    display:flex; 
-    flex-direction: column; 
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
 }
 
-.formInput{
-    display: flex;
-    flex-grow:1;
-    margin-bottom: 10px;
-    border-color: #2D419C;
-  }
+.active:after {
+  content: "\2212";
 
-.formInput select{
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color: white;
+
+}
+
+
+.visitsList {
+  font-size: 1.1em;
+}
+
+.btnStudent {
+  color: white;
+  min-height: 40px;
+  border: none;
+}
+
+.formVisitContainer {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  min-width: 250px;
+  max-width: 40%;
+  box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addVisitForm {
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.formInput {
+  display: flex;
+  flex-grow: 1;
+  margin-bottom: 10px;
+  border-color: #2D419C;
+}
+
+.formInput select {
   width: 100%;
 }
-  
-.formInputField{
-    display:flex;
-    flex-grow:1;
-    font-size:0.95em;
-    padding: 10px;
-    min-height:20px;
-    max-width:400px;
-    min-width:10px;
-    
+
+.formInputField {
+  display: flex;
+  flex-grow: 1;
+  font-size: 0.95em;
+  padding: 10px;
+  min-height: 20px;
+  max-width: 400px;
+  min-width: 10px;
+
 }
 
-.formInputIcon{
+.formInputIcon {
   padding: 10px;
-  padding-top:14px;
+  padding-top: 14px;
   background: #2D419C;
   color: white;
   text-align: center;
-  min-width:24px;  
-  max-width:64px;
+  min-width: 24px;
+  max-width: 64px;
 }
 
-.buttonStudent
-{ 
-  margin-left:auto;
-  margin-right:auto;
+.buttonStudent {
+  margin-left: auto;
+  margin-right: auto;
   background-color: #2D419C;
-} 
-.formInputSubmit{
-    margin-top:5px;
-    min-width: 100px;
-    font-size:1.1em;
+}
+
+.formInputSubmit {
+  margin-top: 5px;
+  min-width: 100px;
+  font-size: 1.1em;
 }
 
 
+.visitsList {
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95%;
+}
+
+.visitsList ul {
+  list-style: none;
+  padding: 0;
+  box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: black;
+}
+
+.visitsList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+  align-items: center;
+}
+
+.visitsList li:last-child {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 0;
+}
+
+.visitsList span {
+  margin-right: 5px;
+}
+
+.visitsList button {
+  margin: 0;
+}
+
+.logoutContainer {
+  text-align: center;
+}
