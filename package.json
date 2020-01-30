@@ -44,5 +44,6 @@
     "assets": "webpack -w --display-max-modules 0"
   },
   "author": "Dziekanatbooster divisionxd",
-  "license": "ISC"
+  "license": "ISC",{
+"engines":{"node":>="10.0.0",
 }
