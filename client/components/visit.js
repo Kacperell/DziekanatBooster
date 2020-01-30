@@ -121,7 +121,68 @@ function setDefoultOptionsTimePikcer() {
     let currentCallendarDay = checkDate.getDate();
     console.log(currentCallendarDay);
 
-    if (currentCallendarDay > currentDay + 2) {
+    let currentCallendarMonth=checkDate.getMonth()+1;
+    console.log(currentCallendarMonth);
+
+    let currentCallendarYear=checkDate.getYear();
+    console.log(currentCallendarYear);
+
+
+    if(currentCallendarMonth>currentMonth+1){
+        window.alert('Wybierz max do 2 dni do przodu');
+        dataPicker.valueAsDate = new Date();
+        checkFreeVisitsHours();
+    }
+
+    else if (currentCallendarMonth>currentMonth ){
+
+        switch(currentCallendarMonth){
+        case 1:
+        currentCallendarDay+=31;
+        break;
+        case 2:
+        currentCallendarDay+=31;
+        break;
+        case 3:
+        currentCallendarDay+=29;
+        break;
+        case 4:
+        currentCallendarDay+=31;
+        break;
+        case 5:
+        currentCallendarDay+=30;
+        break;
+        case 6:
+        currentCallendarDay+=31;
+        break;
+        case 7:
+        currentCallendarDay+=30;
+        break;
+        case 8:
+        currentCallendarDay+=31;
+        break;
+        case 9:
+        currentCallendarDay+=31;
+        break;
+        case 10:
+        currentCallendarDay+=30;
+        break;
+        case 11:
+        currentCallendarDay+=31;
+        break;
+        case 12:
+        currentCallendarDay+=30;
+        break;
+
+        }
+        if(currentCallendarDay>currentDay+2){
+            window.alert('Wybierz max do 2 dni do przodu');
+            dataPicker.valueAsDate = new Date();
+            checkFreeVisitsHours();
+        }
+    }
+
+    else if(currentCallendarDay>currentDay+2){
         window.alert('Wybierz max do 2 dni do przodu');
         dataPicker.valueAsDate = new Date();
         checkFreeVisitsHours();
