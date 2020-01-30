@@ -2,8 +2,10 @@ extends layout
 block content
     if(message)
       h1 #{email}
-      h2 #{message}
+      
     .formVisitContainer
+      .mp-form__header
+       h1 Dodaj wizytę
       form.addVisitForm(method='POST' action='/student' class="addVisitForm")
         .formInput
           .formInputIcon
