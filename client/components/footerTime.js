@@ -1,5 +1,8 @@
 function footerTime(){
-
+const errorContainer=document.querySelector('.mp-error-background');
+if(errorContainer){
+    return;
+}
     var czas = new Date();
     var h = czas.getHours(); // 0 - 23
     var m = czas.getMinutes(); // 0 - 59

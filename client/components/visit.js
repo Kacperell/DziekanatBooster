@@ -117,6 +117,10 @@ function setDefoultOptionsTimePikcer() {
     var currentDay = today.getDate();
     console.log(currentDay);
 
+    var currentMonth = today.getMonth()+1;
+    console.log(currentDay);
+
+
     //dni w kalendarzu
     let currentCallendarDay = checkDate.getDate();
     console.log(currentCallendarDay);
