@@ -2,8 +2,10 @@ extends layout
 block content
     if(message)
       h1 #{email}
-      h2 #{message}
+      
     .formVisitContainer
+      .mp-form__header
+       h1 Dodaj wizytę
       form.addVisitForm(method='POST' action='/student' class="addVisitForm")
         .formInput
           .formInputIcon
@@ -38,6 +40,7 @@ block content
     .mp-footer
       img.mp-footer__logo(src='../images/zutlogo.png' alt='zut logo')
       h4.mp-footer__text 
+      h4.mp-footer__text1 
       .mp-footer__rightcorner
 
      

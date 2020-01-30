@@ -45,5 +45,7 @@
   },
   "author": "Dziekanatbooster divisionxd",
   "license": "ISC",
-"engines":{"node":>="10.0.0",},
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }

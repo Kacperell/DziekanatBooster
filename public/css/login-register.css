@@ -14,6 +14,7 @@
     margin-bottom:20px;
     max-width:40%;
     min-width:220px;
+    
 }
 
 .mp-form-container{
@@ -103,30 +104,33 @@
 
 .mp-footer{ 
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left:0;
     width: 100%;
     height:70px;
     background-color: white;
     display:flex;
+    justify-content: space-between;
     align-items:center;
     border-top-right-radius:2px;
     border-top-left-radius:2px;
 }
 
 .mp-footer__text{
+   
    color:#2D419C; 
-   font-size:30px; 
-   margin-left:38%;
-   max-width:40px;
+   font-size:18px; 
+   
+   
+  
 
 }
 
 .mp-footer__text1{
     color:#2D419C;
-    font-size:30px;
-    margin-left:10%;
-    max-width:40px;
+    font-size:18px;
+    
+   
  }
 
 .mp-footer__logo{
